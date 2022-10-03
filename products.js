@@ -1,4 +1,5 @@
-var products = [
+// Product Array
+var products = [  
   {
     id: "100",
     name: "iPhone 4S",
@@ -36,16 +37,19 @@ var products = [
     os: "Windows",
   },
 ];
-
+// Copy Array
 let copyArr = [];
+// Copy original array into copy array 
 for (i = 0; i < products.length; i++) {
   copyArr[i] = products[i];
 }
-
+// Document Ready Function
 $(document).ready(function () {
+  // Call Display function to show table
   displayCopy();
-
+// This is filer function in this we filer data according to user
   $("#filter").click(function () {
+    // Make table
     let table =
       "<table border=1px><tr><th>ID</th><th>Name</th><th>Brand</th><th>Operating System</th><th>Remove</th></tr>";
     var OS = document.getElementById("OS").value;
@@ -103,7 +107,7 @@ $(document).ready(function () {
     table += "</table>";
     document.getElementById("output").innerHTML = table;
   });
-
+// This is Search function in this when user wants to search product with the help of ID or Name
   $("#searchEngine").click(function () {
     let table =
       "<table border=1px><tr><th>ID</th><th>Name</th><th>Brand</th><th>Operating System</th><th>Remove</th></tr>";
@@ -147,7 +151,7 @@ $(document).ready(function () {
     document.getElementById("res").innerHTML = table;
   });
 });
-
+// Display Table
 const displayCopy = () => {
   var table =
     "<table border=1px><tr><th>ID</th><th>Name</th><th>Brand</th><th>Operating System</th><th>Remove</th></tr>";
@@ -171,7 +175,7 @@ const displayCopy = () => {
   table += "</table>";
   document.getElementById("output").innerHTML = table;
 };
-
+// Delete Element when user click on X
 function delProd(val) {
   for (let i = 0; i < copyArr.length; i++) {
     if (val == copyArr[i].id) {
